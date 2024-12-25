@@ -5,7 +5,7 @@ import validator from "validator";
 import { validate } from "node-cron";
 
 const userSchema = new mongoose.Schema({
-    name: { 
+    name: {
         type: String,
         required: true,
         minLength: [3, "Name must contain at least 3 characters"],
@@ -34,6 +34,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         minLength: [8, "Password must contain at least 8 characters."],
         maxLength: [32, "Password connot exceed 32 characters."],
+        select: false,
     },
     resume: {
         public_id: String,
@@ -53,4 +54,20 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-export const User = mongo.MongoDBCollectionNamespace("User", userSchema); 
+userSchema.pre("save", async function (next) {
+    if (!this.isModified("password")) {
+        next();
+    }
+    this.password = await bcrypt.hash(this.password, 10);
+});
+
+userSchema.methods.comparePassword = async function (enteredPassword) {
+    return await bcrypt.compare(enteredPassword, this.password);
+};
+
+userSchema.methods.getJWTToken = function () {
+    return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
+        expiresIn: process.env.JWT_EXPIRE,
+    });
+};
+export const User = mongoose.model("User", userSchema);
