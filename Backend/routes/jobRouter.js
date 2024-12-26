@@ -8,7 +8,8 @@ import {
     deleteJob,
 } from "../controllers/jobController.js";
 
-const router = express.Router(); 
+const router = express.Router();
+
 
 router.post("/post", isAuthenticated, isAuthorized("Employer"), postJob);
 router.get("/getall", getAllJobs);
