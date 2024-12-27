@@ -17,8 +17,8 @@ export const newsLetterCron = () => {
                     ],
                 });
                 for (const user of filteredUsers) {
-                    const subject = `Hot Job Alert: ${job.title} in ${job.jobNiche} Available Now`;
-                    const message = `Hi ${user.name},\n\nGreat news! A new job that fits your niche has just been posted. The position is for a ${job.title} with ${job.companyName}, and they are looking to hire immediately.\n\nJob Details:\n- **Position:** ${job.title}\n- **Company:** ${job.companyName}\n- **Location:** ${job.location}\n- **Salary:** ${job.salary}\n\nDon't wait too long! Job openings like these are filled quickly. \n\nWe're here to support you in your job search. Best of luck!\n\nBest Regards,\nNicheNest Team`;
+                    const subject = `Exciting Opportunity: ${job.title} at ${job.companyName}`;
+                    const message = `Hi ${user.name},\n\nWe're excited to share a new job opportunity that matches your skills and career goals.\n\nHere are the details:\n- Position: ${job.title}\n- Company: ${job.companyName}\n- Location: ${job.location}\n- Salary: ${job.salary}\n\n${job.companyName} is hiring immediately, so don't wait too long to apply. If you need assistance with your application or have any questions, we're here to help.\n\nTake the next step in your career today!\n\nBest regards,\nNicheNest Team\n`;
                     sendEmail({
                         email: user.email,
                         subject,
