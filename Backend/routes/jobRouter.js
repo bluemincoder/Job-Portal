@@ -10,7 +10,6 @@ import {
 
 const router = express.Router();
 
-
 router.post("/post", isAuthenticated, isAuthorized("Employer"), postJob);
 router.get("/getall", getAllJobs);
 router.get("/getmyjobs", isAuthenticated, isAuthorized("Employer"), getMyJobs);
@@ -22,4 +21,4 @@ router.delete(
 );
 router.get("/get/:id", getASingleJob);
 
-export default router; 
+export default router;
