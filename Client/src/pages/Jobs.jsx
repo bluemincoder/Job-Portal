@@ -19,6 +19,7 @@ const Jobs = () => {
         setCity(city);
         setSelectedCity(city);
     };
+
     const handleNicheChange = (niche) => {
         setNiche(niche);
         setSelectedNiche(niche);
@@ -75,6 +76,8 @@ const Jobs = () => {
         "All",
         "Software Development",
         "Web Development",
+        "Python Development",
+        "Java Development",
         "Cybersecurity",
         "Data Science",
         "Artificial Intelligence",
@@ -97,7 +100,7 @@ const Jobs = () => {
 
     return (
         <>
-            {!loading ? (
+            {loading ? (
                 <Spinner />
             ) : (
                 <section className="jobs">
@@ -115,21 +118,19 @@ const Jobs = () => {
                             <div className="cities">
                                 <h2>Filter Job By City</h2>
                                 {cities.map((city, index) => (
-                                    <>
-                                        <div key={index}>
-                                            <input
-                                                type="radio"
-                                                id={city}
-                                                name="city"
-                                                value={city}
-                                                checked={selectedCity === city}
-                                                onChange={() =>
-                                                    handleCityChange(city)
-                                                }
-                                            />
-                                            <label htmlFor={city}>{city}</label>
-                                        </div>
-                                    </>
+                                    <div key={index}>
+                                        <input
+                                            type="radio"
+                                            id={city}
+                                            name="city"
+                                            value={city}
+                                            checked={selectedCity === city}
+                                            onChange={() =>
+                                                handleCityChange(city)
+                                            }
+                                        />
+                                        <label htmlFor={city}>{city}</label>
+                                    </div>
                                 ))}
                             </div>
                             <div className="cities">
@@ -177,67 +178,66 @@ const Jobs = () => {
                                 </select>
                             </div>
                             <div className="jobs_container">
-                                {
-                                    jobs && jobs.length > 0 ? (
-                                        jobs.map((element) => {
-                                            return (
-                                                <div
-                                                    className="card"
-                                                    key={element._id}
-                                                >
-                                                    {element.hiringMultipleCandidates ===
-                                                    "Yes" ? (
-                                                        <p className="hiring-multiple">
-                                                            Hiring Multiple
-                                                            Candidates
-                                                        </p>
-                                                    ) : (
-                                                        <p className="hiring">
-                                                            Hiring
-                                                        </p>
+                                {jobs && jobs.length > 0 ? (
+                                    jobs.map((element) => {
+                                        return (
+                                            <div
+                                                className="card"
+                                                key={element._id}
+                                            >
+                                                {element.hiringMultipleCandidates ===
+                                                "Yes" ? (
+                                                    <p className="hiring-multiple">
+                                                        Hiring Multiple
+                                                        Candidates
+                                                    </p>
+                                                ) : (
+                                                    <p className="hiring">
+                                                        Hiring
+                                                    </p>
+                                                )}
+                                                <p className="title">
+                                                    {element.title}
+                                                </p>
+                                                <p className="company">
+                                                    {element.companyName}
+                                                </p>
+                                                <p className="location">
+                                                    {element.location}
+                                                </p>
+                                                <p className="salary">
+                                                    <span>Salary:</span> Rs.{" "}
+                                                    {element.salary}
+                                                </p>
+                                                <p className="posted">
+                                                    <span>Posted On:</span>{" "}
+                                                    {element.jobPostedOn.substring(
+                                                        0,
+                                                        10
                                                     )}
-                                                    <p className="title">
-                                                        {element.title}
-                                                    </p>
-                                                    <p className="company">
-                                                        {element.companyName}
-                                                    </p>
-                                                    <p className="location">
-                                                        {element.location}
-                                                    </p>
-                                                    <p className="salary">
-                                                        <span>Salary:</span> Rs.{" "}
-                                                        {element.salary}
-                                                    </p>
-                                                    <p className="posted">
-                                                        <span>Posted On:</span>{" "}
-                                                        {element.jobPostedOn.substring(
-                                                            0,
-                                                            10
-                                                        )}
-                                                    </p>
-                                                    <div className="btn-wrapper">
-                                                        <Link
-                                                            className="btn"
-                                                            to={`/post/application/${element._id}`}
-                                                        >
-                                                            Apply Now
-                                                        </Link>
-                                                    </div>
+                                                </p>
+                                                <div className="btn-wrapper">
+                                                    <Link
+                                                        className="btn"
+                                                        to={`/post/application/${element._id}`}
+                                                    >
+                                                        Apply Now
+                                                    </Link>
                                                 </div>
-                                            );
-                                        })
-                                    ) : (
-                                        /************************************************************/
-                                        /* BUG No.2 */
+                                            </div>
+                                        );
+                                    })
+                                ) : (
+                                    // Updated condition for "No Jobs Found" message
+                                    <div className="no-jobs-found">
+                                        <p>No jobs found. Try modifying your filters.</p>
                                         <img
                                             src="./notfound.jpg"
                                             alt="job-not-found"
                                             style={{ width: "100%" }}
                                         />
-                                    )
-                                    /************************************************************/
-                                }
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

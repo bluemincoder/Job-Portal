@@ -173,7 +173,7 @@ const PostApplication = () => {
                 <IoMdCash />
                 <div>
                   <span>Pay</span>
-                  <span>{singleJob.salary} a month</span>
+                  <span>{singleJob.salary}</span>
                 </div>
               </div>
               <div>

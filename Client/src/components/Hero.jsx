@@ -11,7 +11,7 @@ const Hero = () => {
       },
       {
           id: 2,
-          title: "91220",
+          title: "91,220",
           subTitle: "Companies",
           icon: <FaBuilding />,
       },
