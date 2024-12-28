@@ -61,6 +61,10 @@ const applicationSchema = new mongoose.Schema({
             type: String,
             required: true,
         },
+        companyName: {
+            type: String,
+            required: true,
+        },
     },
     deletedBy: {
         jobSeeker: {

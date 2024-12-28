@@ -6,6 +6,7 @@ import {
   FaSquareInstagram,
   FaYoutube,
   FaLinkedin,
+  FaSquareGithub,
 } from "react-icons/fa6";
 
 const Footer = () => {
@@ -45,42 +46,58 @@ const Footer = () => {
                   <h4>Follow Us</h4>
                   <ul>
                       <li>
-                          <Link to={"/"}>
+                          <a
+                              href="https://x.com/bluemintweets"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                          >
                               <span>
                                   <FaSquareXTwitter />
                               </span>
                               <span>Twitter (X)</span>
-                          </Link>
+                          </a>
                       </li>
                       <li>
-                          <Link to={"/"}>
+                          <a
+                              href="https://www.instagram.com/__.minaal07.__/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                          >
                               <span>
                                   <FaSquareInstagram />
                               </span>
                               <span>Instagram</span>
-                          </Link>
+                          </a>
                       </li>
                       <li>
-                          <Link to={"/"}>
+                          <a
+                              href="https://github.com/bluemincoder"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                          >
                               <span>
-                                  <FaYoutube />
+                                  <FaSquareGithub />
                               </span>
-                              <span>Youtube</span>
-                          </Link>
+                              <span>Github</span>
+                          </a>
                       </li>
                       <li>
-                          <Link to={"/"}>
+                          <a
+                              href="https://linkedin.com/in/bluemincoder"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                          >
                               <span>
                                   <FaLinkedin />
                               </span>
                               <span>LinkedIn</span>
-                          </Link>
+                          </a>
                       </li>
                   </ul>
               </div>
           </footer>
           <div className="copyright">
-              &copy; CopyRight 2024. All Rights Reserved By Bluemincoder
+              &copy; Copyright 2024. All Rights Reserved By Bluemincoder
           </div>
       </>
   );

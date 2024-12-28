@@ -58,6 +58,10 @@ const MyApplications = () => {
                                             {element.jobInfo.jobTitle}
                                         </p>
                                         <p className="sub-sec">
+                                            <span>Company </span>{" "}
+                                            {element.jobInfo.companyName}
+                                        </p>
+                                        <p className="sub-sec">
                                             <span>Name</span>{" "}
                                             {element.jobSeekerInfo.name}
                                         </p>
