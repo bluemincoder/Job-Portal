@@ -258,7 +258,7 @@ footer {
 }
 footer div {
   flex: 1;
-  padding-right: 20px;
+  padding-right: 100px;
 }
 footer div:first-child {
   display: flex;
