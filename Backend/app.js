@@ -15,11 +15,19 @@ config({ path: "./config/config.env" });
 
 app.use(
     cors({
-        origin: [process.env.FRONTEND_URL],
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true,
+        origin: process.env.FRONTEND_URL, // Explicitly set the allowed origin
+        methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+        credentials: true, // Enable credentials
     })
 );
+
+
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", process.env.FRONTEND_URL);
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    next();
+});
+
 
 app.use(cookieParser());
 app.use(express.json());

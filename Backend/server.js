@@ -9,4 +9,5 @@ cloudinary.v2.config({
 
 app.listen(process.env.PORT, () => {
     console.log(`server listening to port ${process.env.PORT}`);
+    console.log(`server listening to port ${process.env.FRONTEND_URL}`);
 });
