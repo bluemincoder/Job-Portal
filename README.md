@@ -79,116 +79,116 @@ npm run dev
 
 ## API Endpoints
 
-## User Routes
+### User Routes
 
-### Register a User
-Allows users to create a new account.  
-**Method:** POST
-```
-POST http://localhost:4000/api/v1/user/register
-```
+- **Register a User**
+    Allows users to create a new account.  
+    **Method:** POST
+    ```
+    http://localhost:4000/api/v1/user/register
+    ```
 
-### Login a User
-Authenticates a user and returns a token.  
-**Method:** POST
-```
-POST http://localhost:4000/api/v1/user/login
-```
+- **Login a User**
+    Authenticates a user and returns a token.  
+    **Method:** POST
+    ```
+    http://localhost:4000/api/v1/user/login
+    ```
 
-### Get User Details
-Fetches the details of the logged-in user.  
-**Method:** GET
-```
-GET http://localhost:4000/api/v1/user/getuser
-```
+- **Get User Details**
+    Fetches the details of the logged-in user.  
+    **Method:** GET
+    ```
+    http://localhost:4000/api/v1/user/getuser
+    ```
 
-### Logout a User
-Logs out the current user.  
-**Method:** GET
-```
-GET http://localhost:4000/api/v1/user/logout
-```
+- **Logout a User**
+    Logs out the current user.  
+    **Method:** GET
+    ```
+    http://localhost:4000/api/v1/user/logout
+    ```
 
-### Update Profile
-Updates the user's profile information.  
-**Method:** PUT
-```
-PUT http://localhost:4000/api/v1/user/update/profile
-```
+- **Update Profile**
+    Updates the user's profile information.  
+    **Method:** PUT
+    ```
+    http://localhost:4000/api/v1/user/update/profile
+    ```
 
-### Update Password
-Updates the user's password.  
-**Method:** PUT
-```
-PUT http://localhost:4000/api/v1/user/update/password
-```
+- **Update Password**
+    Updates the user's password.  
+    **Method:** PUT
+    ```
+    http://localhost:4000/api/v1/user/update/password
+    ```
 
-## Job Routes
+### Job Routes
 
-### Post a Job
-Creates a new job listing.  
-**Method:** POST
-```
-POST http://localhost:4000/api/v1/job/post
-```
+- **Post a Job**
+    Creates a new job listing.  
+    **Method:** POST
+    ```
+    http://localhost:4000/api/v1/job/post
+    ```
 
-### Get All Jobs
-Retrieves all available job listings.  
-**Method:** GET
-```
-GET http://localhost:4000/api/v1/job/getall
-```
+- **Get All Jobs**
+    Retrieves all available job listings.  
+    **Method:** GET
+    ```
+    http://localhost:4000/api/v1/job/getall
+    ```
 
-### Get My Jobs
-Retrieves all jobs posted by the logged-in user.  
-**Method:** GET
-```
-GET http://localhost:4000/api/v1/job/getmyjobs
-```
+- **Get My Jobs**
+    Retrieves all jobs posted by the logged-in user.  
+    **Method:** GET
+    ```
+    http://localhost:4000/api/v1/job/getmyjobs
+    ```
 
-### Delete a Job
-Deletes a specific job listing.  
-**Method:** DELETE
-```
-DELETE http://localhost:4000/api/v1/job/delete/:id
-```
+- **Delete a Job**
+    Deletes a specific job listing.  
+    **Method:** DELETE
+    ```
+    http://localhost:4000/api/v1/job/delete/:id
+    ```
 
-### Get a Single Job
-Retrieves details of a specific job.  
-**Method:** GET
-```
-GET http://localhost:4000/api/v1/job/get/:id
-```
+- **Get a Single Job**
+    Retrieves details of a specific job.  
+    **Method:** GET
+    ```
+    http://localhost:4000/api/v1/job/get/:id
+    ```
 
-## Application Routes
+### Application Routes
 
-### Post an Application
-Submits a job application.  
-**Method:** POST
-```
-POST http://localhost:4000/api/v1/application/post/:id
-```
+- **Post an Application**
+    Submits a job application.  
+    **Method:** POST
+    ```
+    http://localhost:4000/api/v1/application/post/:id
+    ```
 
-### Employer Get All Applications
-Retrieves all applications received by the employer.  
-**Method:** GET
-```
-GET http://localhost:4000/api/v1/application/employer/getall
-```
+- **Employer Get All Applications**
+    Retrieves all applications received by the employer.  
+    **Method:** GET
+    ```
+    http://localhost:4000/api/v1/application/employer/getall
+    ```
 
-### Job Seeker Get All Applications
-Retrieves all applications submitted by the job seeker.  
-**Method:** GET
-```
-GET http://localhost:4000/api/v1/application/jobseeker/getall
-```
+- **Job Seeker Get All Applications**
+    Retrieves all applications submitted by the job seeker.  
+    **Method:** GET
+    ```
+    http://localhost:4000/api/v1/application/jobseeker/getall
+    ```
 
-### Delete an Application
-Deletes a specific application.  
-**Method:** DELETE
-```
-DELETE http://localhost:4000/api/v1/application/delete/:id
-```
+- **Delete an Application**
+    Deletes a specific application.  
+    **Method:** DELETE
+    ```
+    http://localhost:4000/api/v1/application/delete/:id
+    ```
 
 
 ## Built With
