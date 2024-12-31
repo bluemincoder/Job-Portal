@@ -12,7 +12,7 @@ const Spinner = () => {
           alignItems: "center",
         }}
       >
-        <ClipLoader size={49} />
+        <ClipLoader size={50} />
       </section>
     </>
   );
