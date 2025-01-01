@@ -87,7 +87,6 @@ const jobSlice = createSlice({
       state.myJobs = state.myJobs;
       state.error = action.payload;
     },
-
     clearAllErrors(state, action) {
       state.error = null;
       state.jobs = state.jobs;
@@ -116,23 +115,15 @@ export const fetchJobs =
       if (city && city !== "All") {
         queryParams.push(`city=${city}`);
       }
-
-      /***************************************************/
-      /* BUG No.3 */
       if (city && city === "All") {
         queryParams = [];
         if (searchKeyword) {
           queryParams.push(`searchKeyword=${searchKeyword}`);
         }
       }
-      /***************************************************/
-
       if (niche) {
         queryParams.push(`niche=${niche}`);
       }
-
-      /***************************************************/
-      /* BUG No.4 */
       if (niche && niche === "All") {
         queryParams = [];
         if (searchKeyword) {
@@ -142,8 +133,6 @@ export const fetchJobs =
           queryParams.push(`city=${city}`);
         }
       }
-      /***************************************************/
-
       link += queryParams.join("&");
       const response = await axios.get(link, { withCredentials: true });
       dispatch(jobSlice.actions.successForAllJobs(response.data.jobs));
